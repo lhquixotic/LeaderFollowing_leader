@@ -8,7 +8,6 @@
 #endif //LEADERFOLLOWING_LEADER_FOLLOWING_H
 
 #define SAMPLE_TIME 20000  //us
-#define EXPECTED_DISTANCE 10
 
 #include <thread>
 #include <cmath>
@@ -18,12 +17,3 @@
 #include <typeinfo>
 
 #include "Communication.h"
-
-extern int *CAN_acc_pedal_msg;
-extern int *CAN_brake_msg;
-extern int *CAN_steering_wheel_msg;
-extern int *CAN_wheel_msg;
-extern int *CAN_la_yr_msg;
-extern int *CAN_gear_position_msg;
-extern int *CAN_pedal_angle_msg;
-
