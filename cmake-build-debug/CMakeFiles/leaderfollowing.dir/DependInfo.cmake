@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/nvidia/Downloads/Leader-following-master/Communication.cpp" "/home/nvidia/Downloads/Leader-following-master/cmake-build-debug/CMakeFiles/leaderfollowing.dir/Communication.o"
-  "/home/nvidia/Downloads/Leader-following-master/main.cpp" "/home/nvidia/Downloads/Leader-following-master/cmake-build-debug/CMakeFiles/leaderfollowing.dir/main.o"
+  "/home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp" "/home/nvidia/CLionProjects/LeaderFollowing_leader/cmake-build-debug/CMakeFiles/leaderfollowing.dir/Communication.o"
+  "/home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp" "/home/nvidia/CLionProjects/LeaderFollowing_leader/cmake-build-debug/CMakeFiles/leaderfollowing.dir/main.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

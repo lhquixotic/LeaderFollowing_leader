@@ -22,8 +22,6 @@ void Communication::CAN_send(int *message_ptr,int id,int msg_length,bool EFF, in
     struct sockaddr_can addr;
     struct ifreq ifr;
     struct can_frame frame[2] = {{0}};
-    mutex cansend_mut;
-    cansend_mut.lock();
     socket_word = socket(PF_CAN,SOCK_RAW,CAN_RAW);
 
     if(CAN_channel == 0)
@@ -73,7 +71,6 @@ void Communication::CAN_send(int *message_ptr,int id,int msg_length,bool EFF, in
 
     };
     close(socket_word);
-    cansend_mut.unlock();
 }
 //Send a certain ID CANmsg
 
@@ -81,13 +78,11 @@ int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel){
     //cout << "Receiving ID " << id << " ..." << endl;
 
     /***********************Sockek_CAN config*****************************/
-    static int socket_word, nbytes;
-    static struct sockaddr_can addr;
-    static struct ifreq ifr;
-    static struct can_frame frame;
-    static struct can_filter rfliter[1];
-    mutex candump_mut;
-    candump_mut.lock();
+    int socket_word, nbytes;
+    struct sockaddr_can addr;
+    struct ifreq ifr;
+    struct can_frame frame;
+    struct can_filter rfliter[1];
     socket_word = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 
     //Choose CAN channel
@@ -112,7 +107,7 @@ int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel){
     nbytes = read(socket_word, &frame, sizeof(frame));
     cout << " CAN ID 0x" << hex << id << ": ";
 
-     static int CAN_msg[8] = {0};
+    static int CAN_msg[8] = {0};
     for (int i=0;i<8;i++){
         CAN_msg[i] = (int)frame.data[i];
         cout << CAN_msg[i] << " " ;
@@ -120,7 +115,6 @@ int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel){
     cout << endl;
 
     close(socket_word);
-    candump_mut.unlock();
     return CAN_msg;
 
 }

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/nvidia/Downloads/Leader-following-master/Communication.cpp
+/home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp
 Leader_following.h
-/home/nvidia/Downloads/Leader-following-master/Leader_following.h
+/home/nvidia/CLionProjects/LeaderFollowing_leader/Leader_following.h
 
-/home/nvidia/Downloads/Leader-following-master/Communication.h
+/home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.h
 stdio.h
 -
 stdlib.h
@@ -36,7 +36,7 @@ string
 mutex
 -
 
-/home/nvidia/Downloads/Leader-following-master/Leader_following.h
+/home/nvidia/CLionProjects/LeaderFollowing_leader/Leader_following.h
 thread
 -
 cmath
@@ -50,9 +50,5 @@ ctime
 typeinfo
 -
 Communication.h
-/home/nvidia/Downloads/Leader-following-master/Communication.h
-
-/home/nvidia/Downloads/Leader-following-master/main.cpp
-Leader_following.h
-/home/nvidia/Downloads/Leader-following-master/Leader_following.h
+/home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.h
 
