@@ -34,13 +34,12 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/../../../../include/c++/8.1.0"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/../../../../include/c++/8.1.0/aarch64-unknown-linux-gnu"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/../../../../include/c++/8.1.0/backward"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/local/gcc-8.1/include"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/aarch64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
@@ -58,13 +57,12 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/../../../../include/c++/8.1.0"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/../../../../include/c++/8.1.0/aarch64-unknown-linux-gnu"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/../../../../include/c++/8.1.0/backward"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/aarch64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/local/gcc-8.1/include"/>
-					<Add directory="/usr/local/gcc-8.1/lib/gcc/aarch64-unknown-linux-gnu/8.1.0/include-fixed"/>
+					<Add directory="/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/aarch64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>

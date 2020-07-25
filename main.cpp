@@ -9,10 +9,11 @@ int main()
 
     Communication follower_com;
 
-    thread th1(&Communication::CAN_retrans,&follower_com,VEHICLE_BRAKE_MSG);
+    follower_com.CAN_retrans(VEHICLE_BRAKE_MSG);
+    //thread th1(&Communication::CAN_retrans,&follower_com,VEHICLE_BRAKE_MSG);
     //thread th2(&follower_com.CAN_retrans,VEHICLE_PEDAL_ANGLE_MSG);
 
-    th1.join();
+    //th1.join();
     //th2.join();
 
 

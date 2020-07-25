@@ -6,10 +6,21 @@
 using namespace std;
 
 void Communication::CAN_retrans(int id_origin,int msg_length,bool EFF,int CAN_channel){
-    int *CANmsg_origin;
+    static int *CANmsg_origin;
+    int state_speed;
+    int state_acc;
+    int last_state_speed=0;
+    int last_state_acc=0;
     for(;;){
         CANmsg_origin = Communication::CAN_get_msg(id_origin,EFF,CAN_channel);
-        Communication::CAN_send(MsgConvert(id_origin,CANmsg_origin),LEADER_MSG);
+        usleep(2000);
+        state_acc = *(CANmsg_origin+1) + *(CANmsg_origin+2) * 256;//[0,300]
+        state_speed = *(CANmsg_origin+3) + *(CANmsg_origin+4) * 256;//[0,800]
+        if(state_acc>50&&state_acc<250&&state_speed<300&&(state_acc-last_state_acc)<100)
+            Communication::CAN_send(MsgConvert(id_origin,CANmsg_origin),LEADER_MSG);
+        last_state_acc = state_acc;
+        last_state_speed = state_speed;
+        usleep(2000);
     }
 }
 

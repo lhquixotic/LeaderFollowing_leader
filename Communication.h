@@ -47,8 +47,10 @@
  
 class Communication{
 public:
+
     void CAN_retrans(int id_origin,int msg_length,bool EFF,int CAN_channel);
 private:
+
     void CAN_send(int *message_ptr,int id,int msg_length,bool EFF, int CAN_channel);
     int * CAN_get_msg(int id,bool EFF,int CAN_channel);
     int * MsgConvert(int id_origin, int *msg_ptr);

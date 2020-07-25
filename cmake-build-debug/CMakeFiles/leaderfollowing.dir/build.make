@@ -60,28 +60,28 @@ include CMakeFiles/leaderfollowing.dir/flags.make
 CMakeFiles/leaderfollowing.dir/main.o: CMakeFiles/leaderfollowing.dir/flags.make
 CMakeFiles/leaderfollowing.dir/main.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvidia/CLionProjects/LeaderFollowing_leader/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/leaderfollowing.dir/main.o"
-	/usr/local/gcc-8.1/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/leaderfollowing.dir/main.o -c /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/leaderfollowing.dir/main.o -c /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp
 
 CMakeFiles/leaderfollowing.dir/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/leaderfollowing.dir/main.i"
-	/usr/local/gcc-8.1/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp > CMakeFiles/leaderfollowing.dir/main.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp > CMakeFiles/leaderfollowing.dir/main.i
 
 CMakeFiles/leaderfollowing.dir/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/leaderfollowing.dir/main.s"
-	/usr/local/gcc-8.1/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp -o CMakeFiles/leaderfollowing.dir/main.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp -o CMakeFiles/leaderfollowing.dir/main.s
 
 CMakeFiles/leaderfollowing.dir/Communication.o: CMakeFiles/leaderfollowing.dir/flags.make
 CMakeFiles/leaderfollowing.dir/Communication.o: ../Communication.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nvidia/CLionProjects/LeaderFollowing_leader/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/leaderfollowing.dir/Communication.o"
-	/usr/local/gcc-8.1/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/leaderfollowing.dir/Communication.o -c /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/leaderfollowing.dir/Communication.o -c /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp
 
 CMakeFiles/leaderfollowing.dir/Communication.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/leaderfollowing.dir/Communication.i"
-	/usr/local/gcc-8.1/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp > CMakeFiles/leaderfollowing.dir/Communication.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp > CMakeFiles/leaderfollowing.dir/Communication.i
 
 CMakeFiles/leaderfollowing.dir/Communication.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/leaderfollowing.dir/Communication.s"
-	/usr/local/gcc-8.1/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp -o CMakeFiles/leaderfollowing.dir/Communication.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp -o CMakeFiles/leaderfollowing.dir/Communication.s
 
 # Object files for target leaderfollowing
 leaderfollowing_OBJECTS = \
