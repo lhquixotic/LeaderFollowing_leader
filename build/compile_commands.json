@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/nvidia/CLionProjects/LeaderFollowing_leader/build",
+  "command": "/usr/local/bin/g++    -g   -std=gnu++11 -o CMakeFiles/leaderfollowing.dir/main.o -c /home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp",
+  "file": "/home/nvidia/CLionProjects/LeaderFollowing_leader/main.cpp"
+},
+{
+  "directory": "/home/nvidia/CLionProjects/LeaderFollowing_leader/build",
+  "command": "/usr/local/bin/g++    -g   -std=gnu++11 -o CMakeFiles/leaderfollowing.dir/Communication.o -c /home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp",
+  "file": "/home/nvidia/CLionProjects/LeaderFollowing_leader/Communication.cpp"
+}
+]

@@ -5,21 +5,21 @@
 
 using namespace std;
 
-void Communication::CAN_retrans(int id_origin,int msg_length,bool EFF,int CAN_channel){
-    static int *CANmsg_origin;
-    int state_speed;
-    int state_acc;
-    int last_state_speed=0;
-    int last_state_acc=0;
-    for(;;){
-        CANmsg_origin = Communication::CAN_get_msg(id_origin,EFF,CAN_channel);
+void Communication::CAN_retrans(int id_origin,int msg_length,bool EFF,int CAN_channel,int* CANmsg_origin){
+
+    //static int *CANmsg_origin;
+    /*
+    static int state_speed;
+    static int state_acc;
+    static int last_state_speed=0;
+    static int last_state_acc=0;//TODO:dd
+    */
+     for(;;){
+        CANmsg_origin = Communication::CAN_get_msg(id_origin,EFF,CAN_channel,CANmsg_origin);
         usleep(2000);
-        state_acc = *(CANmsg_origin+1) + *(CANmsg_origin+2) * 256;//[0,300]
-        state_speed = *(CANmsg_origin+3) + *(CANmsg_origin+4) * 256;//[0,800]
-        if(state_acc>50&&state_acc<250&&state_speed<300&&(state_acc-last_state_acc)<100)
+        if(CANmsg_origin[8]==0){
             Communication::CAN_send(MsgConvert(id_origin,CANmsg_origin),LEADER_MSG);
-        last_state_acc = state_acc;
-        last_state_speed = state_speed;
+        }
         usleep(2000);
     }
 }
@@ -85,7 +85,7 @@ void Communication::CAN_send(int *message_ptr,int id,int msg_length,bool EFF, in
 }
 //Send a certain ID CANmsg
 
-int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel){
+int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel,int *CAN_msg){
     //cout << "Receiving ID " << id << " ..." << endl;
 
     /***********************Sockek_CAN config*****************************/
@@ -116,9 +116,14 @@ int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel){
     //设置过滤规则
     setsockopt(socket_word, SOL_CAN_RAW, CAN_RAW_FILTER, &rfilter, sizeof(rfilter));
     nbytes = read(socket_word, &frame, sizeof(frame));
+
     cout << " CAN ID 0x" << hex << id << ": ";
 
-    static int CAN_msg[8] = {0};
+    if(id%65536 == frame.can_id%65536)
+        CAN_msg[8] = 0;
+    else
+        CAN_msg[8] = 1;
+
     for (int i=0;i<8;i++){
         CAN_msg[i] = (int)frame.data[i];
         cout << CAN_msg[i] << " " ;

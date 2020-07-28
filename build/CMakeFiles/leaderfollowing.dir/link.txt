@@ -1,0 +1,1 @@
+/usr/local/bin/g++  -g  -rdynamic CMakeFiles/leaderfollowing.dir/main.o CMakeFiles/leaderfollowing.dir/Communication.o  -o leaderfollowing -lpthread 
