@@ -23,6 +23,18 @@ void Communication::CAN_retrans(int id_origin,int msg_length,bool EFF,int CAN_ch
         usleep(2000);
     }
 }
+/**********************************************
+ * Function: CAN_retrans
+ * Description: Retransmit the specified Leader CANMsg to Follower via UWB
+ * Input: 
+ *       int id_origin: the CANID that needed to retransmit;
+ *       int msg_length: the length of this CANmsg;
+ *       bool EFF : True if the CAN Frame is Extended Frame;
+ *       int CAN_channel: the channel that the retrans Msg send;
+ *       int* CANmsg_origin: the pointer to origin CANmsg.
+ * Output:
+ *        /
+ ***********************************************/ 
 
 void Communication::CAN_send(int *message_ptr,int id,int msg_length,bool EFF, int CAN_channel){
     //cout << "Sending..." << endl;
@@ -84,6 +96,18 @@ void Communication::CAN_send(int *message_ptr,int id,int msg_length,bool EFF, in
     close(socket_word);
 }
 //Send a certain ID CANmsg
+/**********************************************
+ * Function: CAN_send
+ * Description: Send the Msg
+ * Input: 
+ *       int* message_ptr: the pointer to msg that needed to send;
+ *       int id: the ID of the msg;
+ *       int msg_length: the length of the msg;
+ *       bool EFF : True if the CAN frame is Extended Frame;
+ *       int CAN_channel: the channel where the msg is sended. 
+ * Output:
+ *        /
+ ***********************************************/ 
 
 int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel,int *CAN_msg){
     //cout << "Receiving ID " << id << " ..." << endl;
@@ -134,24 +158,38 @@ int * Communication::CAN_get_msg(int id, bool EFF, int CAN_channel,int *CAN_msg)
     return CAN_msg;
 
 }
-//get CAN message
+/**********************************************
+ * Function: CAN_get_msg
+ * Description: Get the pointer of received message
+ * Input: 
+ *       int id: the ID of the msg;
+ *       bool EFF : True if the CAN frame is Extended Frame;
+ *       int CAN_channel: the channel where the msg is sended. 
+ *       int* CAN_msg: the 
+ * Output:
+ *        /
+ ***********************************************/ 
 
 int * Communication::MsgConvert(int id_origin, int *msg_ptr){
     static int msg_retrans[8] = {0};
-    if(id_origin == VEHICLE_ACC_PEDAL_ID)
-        msg_retrans[0] = 0xA1;
-    else if(id_origin == VEHICLE_BRAKE_ID)
+
+    //if(id_origin == VEHICLE_ACC_PEDAL_ID)
+    //    msg_retrans[0] = 0xA1;
+    if(id_origin == VEHICLE_BRAKE_ID)
         msg_retrans[0] = 0xA2;
-    else if(id_origin == VEHICLE_STEERING_WHEEL_ID)
-        msg_retrans[0] = 0xA3;
-    else if(id_origin == VEHICLE_WHEEL_ID)
-        msg_retrans[0] = 0xA4;
-    else if(id_origin == VEHICLE_LA_YR_ID)
-        msg_retrans[0] = 0xA5;
-    else if(id_origin == VEHICLE_GEAR_POSITION_ID)
-        msg_retrans[0] = 0xA6;
-    else if(id_origin == VEHICLE_PEDAL_ANGLE_ID)
+    //if(id_origin == VEHICLE_STEERING_WHEEL_ID)
+    //    msg_retrans[0] = 0xA3;
+    //if(id_origin == VEHICLE_WHEEL_ID)
+    //    msg_retrans[0] = 0xA4;
+    //if(id_origin == VEHICLE_LA_YR_ID)
+    //    msg_retrans[0] = 0xA5;
+    //if(id_origin == VEHICLE_GEAR_POSITION_ID)
+    //    msg_retrans[0] = 0xA6;
+    if(id_origin == VEHICLE_PEDAL_ANGLE_ID)
         msg_retrans[0] = 0xA7;
+    if(id_origin == LEADER_UWB_ID)
+        msg_retrans[0] = 0xA8;
+
     msg_retrans[1] = *(msg_ptr);
     msg_retrans[2] = *(msg_ptr + 1);
     msg_retrans[3] = *(msg_ptr + 2);
